@@ -1,0 +1,60 @@
+body{
+    width: 100vw;
+    height: auto;
+}
+
+.FirstPage{
+    height: 100vh;
+    text-align: center;
+    .Jlayers{
+        text-align: center;
+        width: 100vw;
+        height: 80vh;
+        background-image: url("../../images/firstImage.jpg");
+        background-size: cover;
+        background-position: center;
+        h1{
+            padding-top:20vh;
+            font-size: 10vw;
+            color: white;  
+        }
+    } 
+    .Presentation{  
+        width: 100%; 
+        height: 20vh;
+        h1{
+            padding-top: 6vh;
+        }   
+    }
+
+    .row{
+        width: 100%;
+        height: 60vh;
+        .PLA{
+            position: relative;
+            .ImpPla{
+                width: 100%;
+                height: 50vh;
+            }
+            h1{
+                
+            }
+            .BtnPla{
+
+            }
+        }
+        .Resine{
+            position: relative;
+            .ImpRes{
+                width: 100%;
+                height: 50vh;
+            }
+            h1{
+
+            }
+            .BtnResine{
+                
+            }
+        }
+    }
+}
