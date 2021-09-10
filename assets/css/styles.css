@@ -1,49 +1,590 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+.box span {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+  top: 90vh;
+  left: 90vw;
+  position: absolute;
+}
+
+.box span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  height: 75vh;
+  background-color: #E9EAE5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+section .container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+section .container .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+section .container .user .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #ff0;
+  transition: 0.5s;
+}
+
+section .container .user .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section .container .user .formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+}
+
+section .container .user .formBx form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+section .container .user .formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+section .container .user .formBx form input[type=submit] {
+  max-width: 100px;
+  background: #677eff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+section .container .user .formBx form .signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+section .container .user .formBx form .signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #677eff;
+}
+
+section .container .signupBx {
+  pointer-events: none;
+}
+
+section .container.active .signupBx {
+  pointer-events: initial;
+}
+
+section .container .signupBx .formBx {
+  left: 100%;
+}
+
+section .container.active .signupBx .formBx {
+  left: 0;
+}
+
+section .container .signupBx .imgBx {
+  left: -100%;
+}
+
+section .container.active .signupBx .imgBx {
+  left: 0%;
+}
+
+section .container .signinBx .formBx {
+  left: 0%;
+}
+
+section .container.active .signinBx .formBx {
+  left: 100%;
+}
+
+section .container .signinBx .imgBx {
+  left: 0%;
+}
+
+section .container.active .signinBx .imgBx {
+  left: -100%;
+}
+
+@media (max-width: 991px) {
+  section .container {
+    max-width: 400px;
+  }
+
+  section .container .imgBx {
+    display: none;
+  }
+
+  section .container .user .formBx {
+    width: 100%;
+  }
+}
+.footer {
+  text-align: center;
+}
+
 body {
   width: 100vw;
   height: auto;
+  overflow-x: hidden;
 }
 
-.FirstPage {
+.navbar {
+  height: 6vh;
+  max-width: 100vw;
+}
+.navbar a {
+  font-size: 1rem;
+}
+.navbar .logo {
+  margin: 10px;
+}
+
+.footer {
+  height: auto;
+  background-color: black;
+}
+.footer h1 {
+  color: white;
+  padding-top: 3vh;
+  font-size: 1rem;
+}
+
+.pagination {
+  margin: 0 auto;
+  padding-bottom: 3vh;
+}
+
+.Accueil {
   height: 100vh;
   text-align: center;
 }
-.FirstPage .Jlayers {
-  text-align: center;
+.Accueil .Jlayers {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   background-image: url("../../images/firstImage.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
-.FirstPage .Jlayers h1 {
-  padding-top: 20vh;
+.Accueil .Jlayers h1 {
+  padding-top: 30vh;
   font-size: 10vw;
   color: white;
 }
-.FirstPage .Presentation {
-  width: 100%;
-  height: 20vh;
+.Accueil .Presentation {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
 }
-.FirstPage .Presentation h1 {
-  padding-top: 6vh;
+.Accueil .Presentation h1 {
+  padding-top: 4vh;
+  font-size: 2rem;
 }
-.FirstPage .row {
+.Accueil .Presentation p {
+  margin: 8%;
+  font-size: 0.9rem;
+}
+.Accueil .row {
   width: 100%;
   height: 60vh;
 }
-.FirstPage .row .PLA {
+.Accueil .row .PLA {
+  height: 60vh;
+  width: 50%;
   position: relative;
+  background-image: url("../../images/impressionPla.png");
+  background-size: cover;
+  background-position: center;
 }
-.FirstPage .row .PLA .ImpPla {
+.Accueil .row .PLA .insidePLA {
+  position: absolute;
+  top: 40%;
   width: 100%;
-  height: 50vh;
 }
-.FirstPage .row .Resine {
+.Accueil .row .PLA .insidePLA h1 {
+  color: white;
+  font-size: 3vw;
+}
+.Accueil .row .PLA .insidePLA .btn {
+  margin-top: 10vh;
+  width: 20%;
+}
+.Accueil .row .Resine {
+  height: 60vh;
+  width: 50%;
   position: relative;
+  background-image: url("../../images/impressionresine.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.FirstPage .row .Resine .ImpRes {
+.Accueil .row .Resine .insideResine {
+  position: absolute;
+  top: 40%;
   width: 100%;
-  height: 50vh;
+}
+.Accueil .row .Resine .insideResine h1 {
+  color: white;
+  font-size: 3vw;
+}
+.Accueil .row .Resine .insideResine .btn {
+  margin-top: 10vh;
+  width: 30%;
+}
+.Accueil .FichierSTL {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
+.Accueil .FichierSTL h1 {
+  padding-top: 4vh;
+}
+.Accueil .FichierSTL p {
+  margin: 8%;
+}
+.Accueil .bibliotheque {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  background-image: url("../../images/bibli.webp");
+  background-size: cover;
+  background-position: center;
+}
+.Accueil .bibliotheque .insideBibli {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.Accueil .bibliotheque .insideBibli h1 {
+  color: white;
+  font-size: 3vw;
+}
+.Accueil .bibliotheque .insideBibli .btn {
+  margin-top: 20vh;
+  width: 50%;
+}
+
+.ImpressionFIl {
+  height: 100vh;
+  text-align: center;
+}
+.ImpressionFIl .QlqPla {
+  width: 100vw;
+  height: 100vh;
+}
+.ImpressionFIl .QlqPla .video-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+}
+.ImpressionFIl .QlqPla h1 {
+  padding-top: 20vh;
+  font-size: 5vw;
+  color: white;
+}
+.ImpressionFIl .Fonctionnement {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
+.ImpressionFIl .Fonctionnement h1 {
+  padding-top: 1vh;
+}
+.ImpressionFIl .Fonctionnement p {
+  margin: 5%;
+  font-size: 1rem;
+}
+.ImpressionFIl .card-group {
+  margin-bottom: 10vh;
+}
+.ImpressionFIl .card-group .card-img-top {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.ImpressionFIl .card-group .card h5 {
+  font-size: 1.5rem;
+}
+.ImpressionFIl .card-group .card p {
+  font-size: 0.8rem;
+  width: 50%;
+  margin: 0 auto;
+}
+.ImpressionFIl .ProduitPla {
+  height: 60vh;
+  margin: 0 auto;
+  background-image: url("../../images/pla-vs-abs.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.ImpressionFIl .ProduitPla h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 4vw;
+  padding-top: 17vh;
+}
+.ImpressionFIl .outils {
+  margin-top: 10vh;
+}
+
+.ImpressionRes {
+  height: 100vh;
+  text-align: center;
+}
+.ImpressionRes .QlqPla {
+  width: 100vw;
+  height: 100vh;
+}
+.ImpressionRes .QlqPla .video-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+}
+.ImpressionRes .QlqPla h1 {
+  padding-top: 20vh;
+  font-size: 5vw;
+  color: white;
+}
+.ImpressionRes .Fonctionnement {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
+.ImpressionRes .Fonctionnement h1 {
+  padding-top: 1vh;
+}
+.ImpressionRes .Fonctionnement p {
+  margin: 5%;
+  font-size: 1rem;
+}
+.ImpressionRes .card-group {
+  margin-bottom: 10vh;
+}
+.ImpressionRes .card-group .card-img-top {
+  width: 60%;
+  margin: 0 auto;
+}
+.ImpressionRes .card-group .card h5 {
+  font-size: 1.5rem;
+}
+.ImpressionRes .card-group .card p {
+  font-size: 0.8rem;
+  width: 50%;
+  margin: 0 auto;
+}
+.ImpressionRes .ProduitPla {
+  height: 60vh;
+  margin: 0 auto;
+  background-image: url("../../images/impressionResine.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.ImpressionRes .ProduitPla h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 4vw;
+  padding-top: 17vh;
+}
+.ImpressionRes .outils {
+  margin-top: 10vh;
+}
+
+.Bibliotheque {
+  text-align: center;
+}
+.Bibliotheque .STL {
+  height: 90vh;
+  background-image: url("../../images/carouStl1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.Bibliotheque .STL h1 {
+  padding-top: 35vh;
+  font-size: 4rem;
+  color: black;
+}
+.Bibliotheque .Search {
+  padding: 5vh;
+  height: 20vh;
+}
+.Bibliotheque .Search .row {
+  width: 80%;
+  padding: 3vh;
+  margin: 0 auto;
+  border: solid 2px black;
+}
+.Bibliotheque .Search .inputSearch {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Bibliotheque .Search .inputSearch .form-control {
+  width: 30%;
+}
+.Bibliotheque .cardStl {
+  margin: 10vh auto;
+}
+.Bibliotheque .cardStl .col-3 {
+  padding: 5vh;
+}
+
+.Login {
+  overflow-y: hidden;
+  width: 100vw;
+  height: 76vh;
+}
+
+.FichierSTl {
+  width: 100vw;
+}
+.FichierSTl .oneSTL {
+  width: 80%;
+  height: auto;
+  margin: 10vh auto;
+  border: 1px solid black;
+}
+.FichierSTl .oneSTL .row {
+  width: 90%;
+  margin: 5vh;
+}
+.FichierSTl .oneSTL .image .myContainer {
+  width: 500px;
+  height: 500px;
+}
+.FichierSTl .oneSTL .col-6 h1 {
+  text-align: center;
+  padding-bottom: 5vh;
+  font-size: 2rem;
+}
+.FichierSTl .oneSTL .col-6 p {
+  font-size: 0.9rem;
+}
+.FichierSTl .oneSTL .Author {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+.FichierSTl .oneSTL .Author h2 {
+  font-size: 1rem;
+}
+.FichierSTl .oneSTL .Author button {
+  margin-left: 25%;
+}
+.FichierSTl .impressionSimilaire {
+  text-align: center;
+  width: 80%;
+  height: auto;
+  margin: 10vh auto;
+  border: 1px solid black;
+}
+.FichierSTl .impressionSimilaire h1 {
+  margin: 5vh 0 0 0;
+  font-size: 2rem;
+}
+.FichierSTl .impressionSimilaire .cardStl {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+.FichierSTl .impressionSimilaire .cardStl .col-3 {
+  margin-left: 5vw;
 }
 
 /*# sourceMappingURL=styles.css.map */
